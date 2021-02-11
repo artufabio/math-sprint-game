@@ -26,28 +26,35 @@ body {
   border: 1px solid black;
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
   width: 530px;
-  height: 750px;
+  /* height: 750px; */
+  height: 97vh;
   position: relative;
   background: rgba(255, 255, 255, 0.5);
   user-select: none;
-  margin-top: 100px;
+  /* margin-top: 100px; */
 }
 
 .header {
   background: var(--primary-color);
   color: white;
   font-family: Oxanium, sans-serif;
-  font-size: 24px;
+  /* font-size: 24px; */
+  font-size: 1.2rem;
   text-shadow: 1px 2px 2px black;
   letter-spacing: 2px;
-  height: 100px;
+  /* height: 100px; */
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.header h1{
+  margin: 0;
+}
+
 .card {
-  margin: 5px auto 10px;
+  /* margin: 5px auto 10px; */
   height: 600px;
 }
 
@@ -64,13 +71,14 @@ input[type="radio"] {
 
 .selection-container {
   position: relative;
-  top: 65px;
+  top: 15px;
 }
 
 .radio-container {
-  width: 90%;
+  width: 95%;
   height: 75px;
-  margin: 25px;
+  /* margin: 25px; */
+  margin: 15px;
   cursor: pointer;
   border: 2px solid black;
   border-radius: 5px;
@@ -91,13 +99,14 @@ label {
 .best-score {
   position: relative;
   top: -100px;
-  left: 330px;
+  /* left: 330px; */
+  left: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   font-size: 18px;
-  max-width: fit-content;
+  /* max-width: fit-content; */
 }
 
 .best-score span {
@@ -109,7 +118,7 @@ label {
 }
 
 .selection-footer {
-  top: 134px;
+  top: 34px;
 }
 
 /* Game Page -------------------------- */
@@ -124,7 +133,7 @@ label {
 }
 
 .item-container {
-  height: 552px;
+  height: 427px;
   overflow-y: scroll;
   position: relative;
   -ms-overflow-style: none;
@@ -138,7 +147,7 @@ label {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  height: 80px;
+  height: 75px;
   margin: 0 50px;
   user-select: none;
 }
@@ -150,10 +159,10 @@ label {
 .selected-item {
   background: var(--select-color);
   position: fixed;
-  top: 443px;
+  top: 328px;
   z-index: -1;
   width: 529px;
-  height: 80px;
+  height: 75px;
 }
 
 .item-footer,
@@ -212,7 +221,7 @@ button:active {
 
 /* Countdown Page ---------------------- */
 .countdown {
-  margin-top: 45%;
+  margin-top: 38%;
   font-size: 100px;
   text-align: center;
   user-select: none;
@@ -221,7 +230,7 @@ button:active {
 
 /* Score Page ------------------------- */
 .score-container {
-  height: 600px;
+  height: 480px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -242,13 +251,13 @@ button:active {
 }
 
 .final-time {
-  font-size: 100px;
+  font-size: 80px;
   margin: 0;
   color: var(--success);
 }
 
 .base-time {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 0;
 }
 
@@ -259,11 +268,12 @@ button:active {
 /* Media Query: Laptop */
 @media screen and (max-width: 1800px) {
   .game-container {
-    margin-top: 35px;
+    /* margin-top: 35px; */
+    margin: 10px 0;
   }
 
   .selected-item {
-    top: 380px;
+    top: 233px;
   }
 }
 
@@ -271,12 +281,17 @@ button:active {
 @media screen and (max-width: 500px) {
   .game-container {
     width: 100%;
-    margin-top: 0;
+    /* margin-top: 0; */
+    height: 100%;
     border: none;
   }
 
+  .item-container {
+    height: 79vh;
+  }
+
   .selected-item {
-    top: 345px;
+    top: 305px;
   }
 
   .header {
@@ -284,7 +299,7 @@ button:active {
   }
 
   .countdown {
-    margin-top: 60%;
+    margin-top: 80%;
   }
 
   .selection-container {
@@ -292,17 +307,22 @@ button:active {
   }
 
   .radio-container {
-    width: 93%;
-    margin: 15px;
+    width: 95%;
+    margin: 5px;
   }
 
   label {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
   }
 
   .best-score {
     font-size: 1rem;
-    left: 245px;
+    /* left: 245px; */
+    left: 100px;
+  }
+
+  .best-score span:last-child {
+    font-size: 1.3rem;
   }
 
   .selection-footer {
@@ -313,6 +333,7 @@ button:active {
 /* Media Query: iPhone */
 @media screen and (max-width: 376px) {
   .best-score {
-    left: 232px;
+    /* left: 232px; */
+    left: 100px;
   }
 }
