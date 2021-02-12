@@ -86,7 +86,6 @@ function updateBestScore() {
 
 // Reset Game
 function playAgain() {
-  gamePage.addEventListener('click', startTimer);
   scorePage.hidden = true;
   splashPage.hidden = false;
   equationsArray = [];
@@ -148,7 +147,6 @@ function startTimer() {
   penaltyTime = 0;
   finalTime = 0;
   timer = setInterval(addTime, 100);
-  gamePage.removeEventListener('click', startTimer);
 }
 
 // Scroll, Store user selection in playerGuessArray
@@ -242,19 +240,28 @@ function populateGamePage() {
 
 // Displays 3, 2, 1, GO!
 function countdownStart() {
-  countdown.textContent = '3';
-  setTimeout(() => countdown.textContent = '2', 1000);
-  setTimeout(() => countdown.textContent = '1', 2000);
-  setTimeout(() => countdown.textContent = 'GO!', 3000);
+  let count = 3;
+  countdown.textContent = count;
+  const timeCountdown = setInterval(() => {
+    count--;
+    if (count === 0) {
+      countdown.textContent = 'GO!';
+    } else if (count === -1) {
+        showGamePage();
+        clearInterval(timeCountdown); 
+        startTimer(); 
+    } else {
+      countdown.textContent = count;
+    }
+  }, 1000);
 }
 
 // Navigate from Splash Page to Countdown Page
 function showCountdown() {
   countdownPage.hidden = false;
   splashPage.hidden = true;
-  countdownStart();
   populateGamePage();
-  setTimeout(showGamePage, 4000);
+  countdownStart();
 }
 
 // Get the value from selected radio button
@@ -291,7 +298,6 @@ startForm.addEventListener('click', () => {
 
 // Event Listeners
 startForm.addEventListener('submit', selectQuestionAmount);
-gamePage.addEventListener('click', startTimer);
 
 // On Load
 getSavedBestScores();
