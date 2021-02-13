@@ -222,7 +222,7 @@ function populateGamePage() {
   itemContainer.textContent = '';
   // Spacer
   const topSpacer = document.createElement('div');
-  topSpacer.classList.add('height-240');
+  topSpacer.classList.add('height-150');
   // Selected Item
   const selectedItem = document.createElement('div');
   selectedItem.classList.add('selected-item');
@@ -234,7 +234,7 @@ function populateGamePage() {
   equationsToDOM();
   // Set Blank Space Below
   const bottomSpacer = document.createElement('div');
-  bottomSpacer.classList.add('height-500');
+  bottomSpacer.classList.add('height-200');
   itemContainer.appendChild(bottomSpacer);
 }
 
